@@ -11,7 +11,7 @@
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-redux": "^7.2.1",
+    "react-redux": "^7.2.5",
     "react-remove-scroll-bar": "^2.1.0",
     "react-scripts": "3.4.3",
     "redux": "^4.0.5",
