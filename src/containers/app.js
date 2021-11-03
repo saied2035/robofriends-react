@@ -1,8 +1,6 @@
 import React from 'react';
 import  CardList from '../components/cardList';
 import SearchBox from '../components/searchBox';
-import Scroll from '../components/Scroll';
-import Error from '../components/Error'
 import {connect} from 'react-redux';
 import {setSearchBar,requestRobots} from '../actions';
 import './defaults.css';
@@ -38,20 +36,16 @@ class  App extends React.Component {
                });
            
              return  isPending ? 
-                <Error>
              <div style={{height:'100vh'}}className='flex justify-center items-center'><h1>Loading</h1></div>
-             </Error>
              :
            	  (
-                <Error>
                 <div className="tc" style={{overflow:'hidden'}} >
                 <h1 className="f2 ma2">RoboFriends</h1>
                 <SearchBox onSearchChange={onSearchChange}/>
-                <Scroll numOfRobots={filteredRobots.length}>
+                <div style={{height:'75vh',overflow:'auto'}}>
                     <CardList robots={filteredRobots} error={error}/>
-                </Scroll>
+                </div>    
                 </div>
-                </Error>
            	 	)
            }
 }
