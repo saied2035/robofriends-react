@@ -1,9 +1,9 @@
-import React from 'react';
+import {useEffect} from 'react';
 import  CardList from '../components/cardList';
 import SearchBox from '../components/searchBox';
+import Header from '../components/Header';
 import {connect} from 'react-redux';
 import {setSearchBar,requestRobots} from '../actions';
-import './defaults.css';
 import './app.css';
 
  const state = (state) => {
@@ -21,33 +21,30 @@ import './app.css';
          }
       
  }
-class  App extends React.Component {
 
-          componentDidMount (){
-              this.props.onRequestRobots();
-          }
-
-           render() {
-            
-            const {searchBar,onSearchChange, robots , isPending, error} = this.props;
-             
-           const filteredRobots= robots.filter(robot => {
-         	return robot.name.toLowerCase().includes( searchBar.toLowerCase())
+function App(props) {
+            const {onRequestRobots} = props
+          useEffect(() =>{
+               onRequestRobots()
+          },[onRequestRobots])
+          const {searchBar,onSearchChange, robots , isPending, error} = props;
+          const filteredRobots= robots.filter(robot => {
+          return robot.name.toLowerCase().includes( searchBar.toLowerCase())
                });
-           
-             return  isPending ? 
+  return (
+          isPending ? 
              <div style={{height:'100vh'}}className='flex justify-center items-center'><h1>Loading</h1></div>
              :
-           	  (
-                <div className="tc" style={{overflow:'hidden'}} >
-                <h1 className="f2 ma2">RoboFriends</h1>
+              (
+                <div className="tc">
+                <Header/>
                 <SearchBox onSearchChange={onSearchChange}/>
                 <div style={{height:'75vh',overflow:'auto'}}>
                     <CardList robots={filteredRobots} error={error}/>
                 </div>    
                 </div>
-           	 	)
-           }
+              )
+  );
 }
 
 export default connect(state,action)(App);

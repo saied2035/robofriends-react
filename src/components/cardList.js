@@ -1,4 +1,4 @@
-import React from 'react';
+import {memo} from 'react';
 import Card from './card'
 const CardList = ({robots,error}) => {
 	             if(error.length) {
@@ -22,4 +22,4 @@ const CardList = ({robots,error}) => {
 		
 }
 
-export default CardList;
+export default  memo(CardList);

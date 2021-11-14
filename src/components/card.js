@@ -1,4 +1,4 @@
-import React from 'react';
+import {memo} from 'react';
 
 const Card = ({id,name,email}) => {
       return (
@@ -10,4 +10,4 @@ const Card = ({id,name,email}) => {
       	);
 }
 
-export default Card;
+export default  memo(Card);
