@@ -39,7 +39,7 @@ function App(props) {
                 <div className="tc">
                 <Header/>
                 <SearchBox onSearchChange={onSearchChange}/>
-                <div style={{height:'75vh',overflow:'auto'}}>
+                <div className="flex justify-center flex-wrap" style={{height:'75vh',overflow:'auto'}}>
                     <CardList robots={filteredRobots} error={error}/>
                 </div>    
                 </div>
