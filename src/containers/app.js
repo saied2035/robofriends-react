@@ -33,15 +33,13 @@ function App(props) {
                });
   return (
           isPending ? 
-             <div style={{height:'100vh'}}className='flex justify-center items-center'><h1>Loading</h1></div>
+                 <div style={{height:'100vh'}}className='flex justify-center items-center'><h1>Loading</h1></div>
              :
               (
                 <div className="tc">
                 <Header/>
                 <SearchBox onSearchChange={onSearchChange}/>
-                <div className="flex justify-center flex-wrap" style={{height:'75vh',overflow:'auto'}}>
-                    <CardList robots={filteredRobots} error={error}/>
-                </div>    
+                <CardList robots={filteredRobots} error={error}/>    
                 </div>
               )
   );
