@@ -1,0 +1,1 @@
+export const getData = (request) => fetch(request).then(response => response.json())
