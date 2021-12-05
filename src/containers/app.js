@@ -1,14 +1,11 @@
-import {useEffect} from 'react';
-import  CardList from '../components/cardList';
-import SearchBox from '../components/searchBox';
-import Header from '../components/Header';
+import {memo} from 'react';
+import MainPage from '../components/MainPage/MainPage';
 import {connect} from 'react-redux';
-import {setSearchBar,requestRobots} from '../actions';
-import './app.css';
+import {setSearchBar,requestRobots} from '../redux/actions/actions';
 
  const state = (state) => {
   return {
-    searchBar :state.searchRobots.searchBar,
+    filterRobots :state.searchRobots.filterRobots,
     robots : state.requestRobots.robots,
     isPending : state.requestRobots.isPending ,
     error : state.requestRobots.error
@@ -16,33 +13,14 @@ import './app.css';
  }
  const action = (action) => {
   return {
-          onSearchChange: (event) => action(setSearchBar(event.target.value)) ,
-          onRequestRobots: () => action(requestRobots()) 
+          onSearchChange: (event,robots) => action(setSearchBar(event.target.value,robots)) ,
+          onRequestRobots: () => action(requestRobots())
          }
       
  }
 
-function App(props) {
-            const {onRequestRobots} = props
-          useEffect(() =>{
-               onRequestRobots()
-          },[onRequestRobots])
-          const {searchBar,onSearchChange, robots , isPending, error} = props;
-          const filteredRobots= robots.filter(robot => {
-          return robot.name.toLowerCase().includes( searchBar.toLowerCase())
-               });
-  return (
-          isPending ? 
-                 <div style={{height:'100vh'}}className='flex justify-center items-center'><h1>Loading</h1></div>
-             :
-              (
-                <div className="tc">
-                <Header/>
-                <SearchBox onSearchChange={onSearchChange}/>
-                <CardList robots={filteredRobots} error={error}/>    
-                </div>
-              )
-  );
+const App=(props) => {
+       return <MainPage {...props} />
 }
 
-export default connect(state,action)(App);
+export default connect(state,action)(memo(App));

@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainPage render MainPage no pending case 1`] = `
+<div
+  className="tc"
+>
+  <Memo(Header) />
+  <Memo(SearchBox)
+    onSearchChange={[Function]}
+  />
+  <Memo(CardList)
+    error=""
+    robots={
+      Array [
+        Object {
+          "email": "saied@gmail.com",
+          "id": 1,
+          "name": "saied",
+        },
+        Object {
+          "email": "saied1@gmail.com",
+          "id": 2,
+          "name": "saied1",
+        },
+        Object {
+          "email": "saied2@gmail.com",
+          "id": 3,
+          "name": "saied2",
+        },
+        Object {
+          "email": "saied3@gmail.com",
+          "id": 4,
+          "name": "saied3",
+        },
+      ]
+    }
+  />
+</div>
+`;
+
+exports[`MainPage render MainPage pending case 1`] = `
+<div
+  className="flex justify-center items-center"
+  style={
+    Object {
+      "height": "100vh",
+    }
+  }
+>
+  <h1>
+    Loading
+  </h1>
+</div>
+`;

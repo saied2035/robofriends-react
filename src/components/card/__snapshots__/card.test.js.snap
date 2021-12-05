@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render card component 1`] = `
+<div
+  className="flex justify-center flex-wrap pa2 ma2 br3 bg-light-yellow grow shadow-5"
+  style={
+    Object {
+      "height": "22rem",
+      "width": "18rem",
+    }
+  }
+>
+  <img
+    alt="robot"
+    height="200"
+    src="https://robohash.org/1?size=400x400"
+    width="200"
+  />
+  <h2>
+    saied
+  </h2>
+  <p>
+    saied@gmail.com
+  </p>
+</div>
+`;

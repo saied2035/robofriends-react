@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render cardList error case 1`] = `
+<div
+  className=" f3 flex justify-center items-center"
+  style={
+    Object {
+      "height": "70vh",
+      "width": "100%",
+    }
+  }
+>
+  <h3>
+    the robots not found for now something went wrong
+  </h3>
+</div>
+`;
+
+exports[`render cardList no error case 1`] = `
+<div
+  className="flex justify-center flex-wrap"
+  style={
+    Object {
+      "height": "75vh",
+      "overflowY": "auto",
+    }
+  }
+>
+  <Memo(Card)
+    email="saiedgaffer@gmail.com"
+    id={1}
+    key="1"
+    name="saied"
+  />
+</div>
+`;

@@ -1,5 +1,5 @@
 import {memo} from 'react';
-import Card from './card'
+import Card from '../card/card'
 const CardList = ({robots,error}) => {
          if(error.length) {
           	return (
@@ -8,6 +8,7 @@ const CardList = ({robots,error}) => {
                </div>
           	);
          }
+
          return (
             <div style={{height:'75vh',overflowY:'auto'}} className="flex justify-center flex-wrap">    
                  {robots.map( item => <Card key={item.id} id={item.id} name={item.name} email={item.email} />)}
