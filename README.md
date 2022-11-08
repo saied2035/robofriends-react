@@ -6,7 +6,7 @@
 
 - HTML
 - CSS
-- JSX & React
+- JSX & React & Redux
 
 # Live Demo
 
