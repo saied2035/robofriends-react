@@ -5,7 +5,6 @@ import {createStore,applyMiddleware, combineReducers} from 'redux';
 import  thunkMiddleware from 'redux-thunk';
 import {searchRobots, requestRobots} from './redux/reducers/reducers';
 import  App from './containers/App';
-import {createLogger} from 'redux-logger'
 import './index.css';
 import 'tachyons';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
@@ -13,7 +12,7 @@ import reportWebVitals from './reportWebVitals';
 
    const rootRducer = combineReducers({searchRobots,requestRobots})
    const logger=createLogger();
-   const store = createStore(rootRducer,applyMiddleware(thunkMiddleware,logger));
+   const store = createStore(rootRducer,applyMiddleware(thunkMiddleware));
 ReactDOM.render(
   <React.StrictMode>
      <Provider store={store}>

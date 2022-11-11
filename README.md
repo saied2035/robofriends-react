@@ -8,7 +8,7 @@
 - CSS
 - JSX & React & Redux
 
-# Live Demo
+## Live Demo
 
 - [Live Demo](saied2035.github.io/robofriends-react/)
 
@@ -26,7 +26,7 @@ for https:
  `npm install`
 
 ### Usage
-   run 
+  run 
  `npm start` for devlopment
  `npm run build` for production code
 
