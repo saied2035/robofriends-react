@@ -11,7 +11,6 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
    const rootRducer = combineReducers({searchRobots,requestRobots})
-   const logger=createLogger();
    const store = createStore(rootRducer,applyMiddleware(thunkMiddleware));
 ReactDOM.render(
   <React.StrictMode>
